@@ -1,0 +1,7 @@
+---
+- name: Upgrade packages
+  hosts: all
+  become: true
+  tasks:
+    - name: Upgrade all apt packages
+      apt: upgrade=dist force_apt_get=yes

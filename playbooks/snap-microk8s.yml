@@ -1,0 +1,9 @@
+---
+- hosts: all
+  become: true
+  tasks:
+    - name: Install microk8s for Canonical Kubernetes
+      snap:
+        name: microk8s
+        classic: yes
+        channel: 1.27/stable
