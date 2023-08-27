@@ -1,0 +1,15 @@
+---
+- name: Generate Join Token on control plane
+  hosts: master[0]
+  become: true
+  gather_facts: false
+
+  tasks:
+    - name: "Generate join key and read output"
+      command: microk8s add-node
+      register: add_output
+
+    - name: Save token to file
+      copy:
+        content: "{{ add_output.stdout }}"
+        dest: /tmp/join_token.txt

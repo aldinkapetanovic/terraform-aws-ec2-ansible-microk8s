@@ -1,0 +1,24 @@
+---
+- name: Join Kubernetes nodes
+  hosts: all
+  become: true
+  gather_facts: false
+
+  tasks:
+    - name: Retrieve token from file
+      slurp:
+        src: /tmp/join_token.txt
+      register: token_data
+
+    - name: Set join token fact
+      set_fact:
+        join_token: "{{ token_data.content | b64decode }}"
+
+    - name: Determine node type (master/worker)
+      set_fact:
+        node_type: "{{ 'master' if inventory_hostname in groups['master'] else 'worker' }}"
+      delegate_to: localhost
+
+    - name: Join node as master or worker
+      command: "microk8s join --token {{ join_token }} {{ groups[node_type][0] }}"
+      when: node_type != 'none'

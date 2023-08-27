@@ -1,6 +1,6 @@
 ---
 - name: "Prepare the join command from the master"
-  hosts: master
+  hosts: master[1:]
   tasks:
     - name: "Create join key and read output"
       command: microk8s add-node

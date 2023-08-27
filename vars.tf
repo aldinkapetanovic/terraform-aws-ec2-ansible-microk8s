@@ -11,7 +11,7 @@ variable "PATH_TO_PUBLIC_KEY" {
 }
 
 variable "n" {
-  description = "Total number of instances (including masters, workers and spare)"
+  description = "Total number of instances (including masters + spare and workers)"
   type        = number
   default     = 7
 }
@@ -19,5 +19,5 @@ variable "n" {
 variable "masters" {
   description = "Number of master nodes"
   type        = number
-  default     = 3
+  default     = 4
 }

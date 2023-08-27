@@ -1,9 +1,16 @@
 ---
-- hosts: all
+- name: Play for installing microk8s
+  hosts: all
   become: true
   tasks:
     - name: Install microk8s for Canonical Kubernetes
-      snap:
+      community.general.snap:
         name: microk8s
-        classic: yes
+        classic: true
         channel: 1.27/stable
+    - name: Add ubuntu user to microk8s group
+      become: true
+      ansible.builtin.user:
+        name: ubuntu
+        groups: microk8s
+        append: true

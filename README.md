@@ -2,7 +2,7 @@ export AWS_ACCESS_KEY_ID="anaccesskey"
 
 export AWS_SECRET_ACCESS_KEY="asecretkey"
 
-export AWS_DEFAULT_REGION="eu-west-1"
+export AWS_DEFAULT_REGION="eu-west-2"
 
 
 ssh-keygen -f microk8skey -N "" 
@@ -14,6 +14,8 @@ terraform plan
 terraform apply
 
 ansible-galaxy install gantsign.oh-my-zsh
+
+ansible-galaxy collection install community.general
 
 ansible-playbook -i microk8s-inventory.ini playbooks/upgrade.yml
 
