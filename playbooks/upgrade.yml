@@ -3,10 +3,9 @@
   hosts: all
   become: true
   tasks:
-    - name: Upgrade all apt packages
+    - name: Run the equivalent of "apt-get update" as a separate step
       ansible.builtin.apt:
-      update_cache: yes
-      upgrade: dist
-      force_apt_get: yes
-      autoclean: yes
-      autoremove: yes
+        update_cache: true
+    - name: Upgrade the OS (apt-get dist-upgrade)
+      ansible.builtin.apt:
+        upgrade: dist

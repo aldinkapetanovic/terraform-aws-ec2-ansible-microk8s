@@ -2,6 +2,8 @@
   hosts: all
   become: true
   tasks:
-    - name: Reboot microk8s
+    # - name: Reboot microk8s
+    #   ansible.builtin.reboot:
+    #     reboot_timeout: 120
+    - name: Unconditionally reboot the machine with all defaults
       ansible.builtin.reboot:
-        reboot_timeout: 120
