@@ -14,3 +14,5 @@
         name: ubuntu
         groups: microk8s
         append: true
+    - name: Reset ssh connection to allow user changes to affect ubuntu user
+      ansible.builtin.meta: reset_connection
