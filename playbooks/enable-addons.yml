@@ -1,0 +1,17 @@
+---
+- hosts: master[0]
+  tasks:
+    - name: CoreDNS
+      command: microk8s enable dns
+    - name: Cloud native certificate management
+      command: microk8s enable cert-manager
+    - name: The Kubernetes dashboard
+      command: microk8s enable dashboard
+    - name: Ingress controller for external access
+      command: microk8s enable ingress
+    # - name: A lightweight observability stack for logs, traces and metrics
+    #   command: microk8s enable observability
+    # - name: The community addons repository
+    #   command: microk8s enable community
+    # - name: Argo CD is a declarative continuous deployment for Kubernetes.
+    #   command: microk8s enable argocd
