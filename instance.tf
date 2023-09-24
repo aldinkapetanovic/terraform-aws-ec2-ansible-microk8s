@@ -8,9 +8,9 @@ resource "aws_instance" "microk8s-node" {
   key_name = aws_key_pair.microk8skey.key_name
 
   ### root disk
-  # root_block_device {
-  #   volume_size = "20"
-  # }
+  root_block_device {
+    volume_size = "20"
+  }
 
   tags = {
     Name = "microk8s-node-${count.index + 1}"

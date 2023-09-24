@@ -6,7 +6,7 @@
     - role: gantsign.oh-my-zsh
       users:
         - username: ubuntu
-      oh_my_zsh_theme: risto
+      oh_my_zsh_theme: intheloop
       oh_my_zsh_plugins:
         - microk8s
 

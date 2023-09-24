@@ -4,7 +4,7 @@
   serial: 1
   tasks:
     - name: "Create join key and read output"
-      command: microk8s add-node -l 300 -t 11f5fafb4fabe1e0309e7914d4603a11 --format short
+      command: microk8s add-node -t 11f5fafb4fabe1e0309e7914d4603a11 --format short
       register: add_output
 
     - name: "Define the 'join_command' variable"
