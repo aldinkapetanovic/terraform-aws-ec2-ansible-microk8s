@@ -17,18 +17,20 @@ ansible-galaxy install gantsign.oh-my-zsh
 
 ansible-galaxy collection install community.general
 
+Ansible PlayBooks
+
 ansible-playbook -i microk8s-inventory.ini playbooks/upgrade.yml
 
 ansible-playbook -i microk8s-inventory.ini playbooks/reboot.yml
 
-ansible-playbook -i microk8s-inventory.ini playbooks/additional-packages-playbook.yml
+ansible-playbook -i microk8s-inventory.ini playbooks/snap-microk8s.yml
+
+ansible-playbook -i microk8s-inventory.ini playbooks/additional-packages.yml
 
 ansible-playbook -i microk8s-inventory.ini playbooks/oh-my-zsh.yml
 
-ansible-playbook -i microk8s-inventory.ini playbooks/snap-microk8s.yml
+ansible-playbook -i microk8s-inventory.ini playbooks/ssh-key.yml
 
-ansible-playbook -i microk8s-inventory.ini playbooks/config-microk8s-workers.yml
+ansible-playbook -i microk8s-inventory.ini playbooks/enable-addons.yml
 
-ansible-playbook -i microk8s-inventory.ini playbooks/config-microk8s-master.yml
-
-<!-- ansible-playbook -i microk8s-inventory.ini playbooks/join.yml -->
+ansible-playbook -i microk8s-inventory.ini playbooks/join.yml

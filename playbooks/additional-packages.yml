@@ -2,7 +2,7 @@
 - hosts: all
   become: true
   tasks:
-    - name: Install ZSH, Git...
+    - name: Install ZSH, acl...
       apt:
         name: "{{ packages }}"
         state: present
@@ -10,3 +10,4 @@
       vars:
         packages:
           - zsh
+          - acl
