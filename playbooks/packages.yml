@@ -2,7 +2,7 @@
 - hosts: all
   become: true
   tasks:
-    - name: Install ZSH, acl...
+    - name: Install ZSH, Git...
       apt:
         name: "{{ packages }}"
         state: present
@@ -10,4 +10,7 @@
       vars:
         packages:
           - zsh
+          - git
+          - pydf
           - acl
+          - python3-pygments

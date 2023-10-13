@@ -1,0 +1,15 @@
+# ansible-inventory -i inventory.ini -y --list > inventory.yaml
+all:
+  children:
+    master:
+      hosts:
+        mycluster-m-01.domain.tld: {}
+        mycluster-m-02.domain.tld: {}
+        mycluster-m-03.domain.tld: {}
+        mycluster-m-04.domain.tld: {}
+    ungrouped: {}
+    worker:
+      hosts:
+        mycluster-w-01.domain.tld: {}
+        mycluster-w-02.domain.tld: {}
+        mycluster-w-03.domain.tld: {}
