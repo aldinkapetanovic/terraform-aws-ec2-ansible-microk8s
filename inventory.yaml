@@ -1,15 +1,24 @@
-# ansible-inventory -i inventory.ini -y --list > inventory.yaml
 all:
   children:
     master:
       hosts:
-        mycluster-m-01.domain.tld: {}
-        mycluster-m-02.domain.tld: {}
-        mycluster-m-03.domain.tld: {}
-        mycluster-m-04.domain.tld: {}
-    ungrouped: {}
+        139-162-186-21-master-3.sslip.io:
+          ansible_ssh_common_args: -o StrictHostKeyChecking=no
+          ansible_ssh_user: root
+        170-187-186-76-master-1.sslip.io:
+          ansible_ssh_common_args: -o StrictHostKeyChecking=no
+          ansible_ssh_user: root
+        85-90-245-127-master-2.sslip.io:
+          ansible_ssh_common_args: -o StrictHostKeyChecking=no
+          ansible_ssh_user: root
     worker:
       hosts:
-        mycluster-w-01.domain.tld: {}
-        mycluster-w-02.domain.tld: {}
-        mycluster-w-03.domain.tld: {}
+        139-162-143-100-worker-2.sslip.io:
+          ansible_ssh_common_args: -o StrictHostKeyChecking=no
+          ansible_ssh_user: root
+        143-42-205-90-worker-1.sslip.io:
+          ansible_ssh_common_args: -o StrictHostKeyChecking=no
+          ansible_ssh_user: root
+        85-90-244-24-worker-3.sslip.io:
+          ansible_ssh_common_args: -o StrictHostKeyChecking=no
+          ansible_ssh_user: root

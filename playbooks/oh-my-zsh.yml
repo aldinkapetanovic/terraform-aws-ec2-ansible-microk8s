@@ -2,14 +2,23 @@
 # ansible-galaxy install gantsign.oh-my-zsh
 - name: Play for installing oh-my-zsh
   hosts: all
+  gather_facts: false
   roles:
     - role: gantsign.oh-my-zsh
       users:
         - username: ubuntu
-      oh_my_zsh_theme: intheloop
+      oh_my_zsh_theme: refined
       oh_my_zsh_plugins:
         - microk8s
-
+        - git
+        - kubectl
+        - docker
+        - helm
+        - command-not-found
+        - colorize
+        - colored-man-pages
+        - themes
+        - history
 
 # compdef microk8s.kubectl=kubectl
 # compdef mk=kubectl

@@ -30,9 +30,9 @@ microk8s config > .kube/config
 
 scp mycluster-m-01.domain.tld:/home/ubuntu/.kube/config ~/.kube/config-mycluster
 
- kubectl --kubeconfig ~/.kube/config-mycluster get no
+kubectl --kubeconfig ~/.kube/config-mycluster get no
 
- k9s --kubeconfig ~/.kube/config-mycluster
+k9s --kubeconfig ~/.kube/config-mycluster
  
 
 ## Dashboard

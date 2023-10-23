@@ -2,17 +2,18 @@
 - name: Play for installing microk8s
   hosts: all
   become: true
+  gather_facts: false
   tasks:
     - name: Install microk8s for Canonical Kubernetes
       community.general.snap:
         name: microk8s
         classic: true
-        channel: 1.27/stable
+        channel: 1.26/stable
     - name: Add ubuntu user to microk8s group
       become: true
       ansible.builtin.user:
         name: ubuntu
-        groups: microk8s
+        groups: sudo,microk8s
         append: true
     - name: Reset ssh connection to allow user changes to affect ubuntu user
       ansible.builtin.meta: reset_connection
