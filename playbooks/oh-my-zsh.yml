@@ -2,7 +2,7 @@
 # ansible-galaxy install gantsign.oh-my-zsh
 - name: Play for installing oh-my-zsh
   hosts: all
-  gather_facts: false
+  gather_facts: true
   roles:
     - role: gantsign.oh-my-zsh
       users:
