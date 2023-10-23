@@ -1,12 +1,13 @@
 ---
 - hosts: all
   become: true
+  gather_facts: false
   tasks:
     - name: Ensure local certs directory exists
       file: state=directory path=/usr/local/share/ca-certificates
 
-    - name: Install myCA cert
-      copy: src=MyCA.crt dest=/usr/local/share/ca-certificates/MyCA.crt
+    - name: Install BHTrootCA02 cert
+      copy: src=BHTrootCA02.cer dest=/usr/local/share/ca-certificates/BHTrootCA02.crt
 
     - name: Update cert index
       shell: /usr/sbin/update-ca-certificates

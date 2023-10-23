@@ -1,5 +1,6 @@
 ---
 - hosts: master[0]
+  gather_facts: false
   tasks:
     - name: CoreDNS
       command: microk8s enable dns

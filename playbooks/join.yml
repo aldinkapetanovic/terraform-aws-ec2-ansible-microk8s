@@ -1,6 +1,7 @@
 ---
 - name: "Prepare the join command from the master"
   hosts: master[0]
+  gather_facts: false
   tasks:
     - name: "Create join key and read output"
       command: microk8s add-node -l 300 -t 11f5fafb4fabe1e0309e7914d4603a11 --format short
@@ -21,6 +22,7 @@
 
 - name: "Execute the join command in a master node"
   hosts: master[1:]
+  gather_facts: false
   tasks:
     - name: "Debug: Printing the join command"
       debug:
@@ -31,6 +33,7 @@
 
 - name: "Execute the join command in a worker node"
   hosts: worker
+  gather_facts: false
   tasks:
     - name: "Debug: Printing the join command"
       debug:

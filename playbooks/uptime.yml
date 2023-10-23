@@ -1,6 +1,7 @@
 ---
 - name: Check uptime
   hosts: all
+  gather_facts: false
   tasks:
     - name: Get hostname
       ansible.builtin.command: /bin/hostname
