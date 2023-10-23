@@ -1,0 +1,16 @@
+---
+- import_playbook: hostname.yml
+- import_playbook: timezone.yml
+# - import_playbook: nopasswd.yml
+# - import_playbook: packages.yml
+# - import_playbook: upgrade.yml
+# - import_playbook: reboot.yml
+# - import_playbook: my-ca-cert.yml
+- import_playbook: snap-microk8s.yml
+# - import_playbook: oh-my-zsh.yml
+# - import_playbook: ssh-key.yml
+- import_playbook: addons.yml
+- import_playbook: join.yml
+- import_playbook: taint.yml
+- import_playbook: label.yml
+# - import_playbook: uptime.yml
